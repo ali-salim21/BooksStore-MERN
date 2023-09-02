@@ -7,7 +7,7 @@ import { Book } from "./models/bookModel.js";
 const app = express();
 
 // Middleware for parsing request body
-//app.use(express.json());
+app.use(express.json());
 
 // We want to create a new route for "/" route
 app.get('/', (request, response) => {
@@ -34,8 +34,8 @@ app.post('/books', async (request, response) => {
         // Create a variable for new book
         const newBook = {
             title: request.body.title,
-            author: request.body.auther,
-             publisher: request.body.publisher,
+            auther: request.body.auther,
+            publisher: request.body.publisher,
         };
         
         // call book.create to send this newbook to it & save result in the book variable

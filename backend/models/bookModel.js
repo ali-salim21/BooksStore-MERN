@@ -9,7 +9,7 @@ const bookSchema = mongoose.Schema(
     }, // No need for ID since it will be handeled by the mongoose db.
     
     { // Time stamp will provide {time of opeartion} and {time of last update}.
-        timestamp: true,
+        timestamps: true,
     }
 );
 
