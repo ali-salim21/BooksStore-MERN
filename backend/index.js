@@ -9,6 +9,24 @@ const app = express();
 // Middleware for parsing request body
 app.use(express.json());
 
+/* 
+Middleware for handling CORS POLICY
+-> Cross-Origin Resource Sharing (CORS)
+-> When server receves request it need check if it is permited
+-> It checks Origins, Methods, Headers
+   Option 1: Allow All Origins with Default of cors(*)
+*/
+//app.use(cors());
+
+// Option 2: Alow custom origins
+app.use(
+    cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowrdHeaders: ['Content-Type'],
+    })
+);
+
 // We want to create a new route for "/" route
 app.get('/', (request, response) => {
     console.log(request);
