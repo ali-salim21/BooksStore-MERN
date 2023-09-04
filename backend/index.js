@@ -3,6 +3,8 @@ import { PORT, mongoDBURL } from "./config.js";
 import mongoose from 'mongoose'; // import mongose library after installing by 'npm i mongoose'
 import { Book } from "./models/bookModel.js";
 import booksRoute from './routes/booksRoute.js';
+import cors from 'cors';
+
 // Use Express framework to create our HTTP Route
 const app = express();
 
@@ -16,16 +18,17 @@ Middleware for handling CORS POLICY
 -> It checks Origins, Methods, Headers
    Option 1: Allow All Origins with Default of cors(*)
 */
-//app.use(cors());
+app.use(cors());
 
 // Option 2: Alow custom origins
-app.use(
+
+/*app.use(
     cors({
     origin: 'http://localhost:3000',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowrdHeaders: ['Content-Type'],
     })
-);
+);*/
 
 // We want to create a new route for "/" route
 app.get('/', (request, response) => {
