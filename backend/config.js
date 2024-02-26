@@ -1,6 +1,6 @@
 export const PORT = 5555;
 
-export const mongoDBURL = 'mongodb+srv://root:root@book-store-mern.gbbnfue.mongodb.net/books-collection?retryWrites=true&w=majority'
+export const mongoDBURL = '' // type your key from the mongodb admin panel
 
 // Create a free database for yourself.
-// This database will be deleted after tutorial.
+// This database will be deleted after the tutorial.
